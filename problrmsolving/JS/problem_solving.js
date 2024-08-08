@@ -514,3 +514,433 @@ function pattren(a){
 
 let n=4
 pattren(n)
+
+//medium level
+// arrayOfMultiples(7, 5) ➞ [7, 14, 21, 28, 35]
+// function multiple(m,n){
+//     let output=[];
+//     for(let i=1;i<=n;i++){
+//         output.push(m*i)
+//     }
+//     console.log(output);
+// }
+// multiple(5,10)
+
+//3. Create the function that takes an array with objects and returns the sum of people's budgets.
+// let input=[
+//   { name: "John",  age: 21, budget: 29000 },
+//   { name: "Steve",  age: 32, budget: 32000 },
+//   { name: "Martin",  age: 16, budget: 1600 }
+// ]
+// let output=0
+// for(obj of input){
+//     output+=obj.budget
+// }
+// console.log(output)
+
+// let output=input.reduce((acc,obj,i)=>{
+//     acc+=obj.budget;
+//     return acc
+// },0)
+// console.log(output)
+
+//13.// Find sum of the Unique numbers: 
+// Example : Let arr = [1, 2, 2, 1, 3, 5, 1];
+//  The unique numbers are 1,2, 3, 5 so the sum should be 11.
+// let a=[1,2, 2, 1, 3, 5, 1]
+// let b=[a[0]];
+// for(let i=0;i<a.length;i++){
+//     let flag=false
+//     for(let j=0;j<b.length;j++){
+//         if(a[i]===b[j]){
+//             flag=true
+//             break;
+//         }
+//     }
+//     if(flag===false){
+//         b.push(a[i]);
+//     }
+// }
+// let sum=0;
+// for(ele of b){
+//     sum+=ele
+// }
+// console.log(sum)
+
+1.// Write a function that converts an object into an array, where each element represents a key-value pair in the form of an array.
+
+// Examples :
+
+// toArray({ a: 1, b: 2 }) ➞ [["a", 1], ["b", 2]]
+
+// toArray({ shrimp: 15, tots: 12 }) ➞ [["shrimp", 15], ["tots",12]]
+
+// toArray({}) ➞ []
+
+// let obj = {a:1,b:2} 
+// let a = []
+// for(key in obj){
+//    a.push([key,obj[key]])
+// }
+// console.log(a)
+
+4.// Create a function that takes an array of objects like { name: "John", notes: [3, 5, 4]} and returns an array of objects like { name: "John", avgNote: 4 }. If a student has no notes (an empty array) then let's assume avgNote: 0.
+// 	Example :
+
+// [
+//   { name: "John", notes: [3, 5, 4]}
+// ] ➞ [
+//   { name: "John", avgNote: 4 }
+// ]
+// let sum = 0
+// let avg = 0
+// let abc={}
+// let a1=[]
+// let aofo = [{ name: "John", notes: [3, 5, 4]}]
+// for(obj of aofo){
+//     for(i=0;i<obj.notes.length;i++){
+     
+//         sum += obj.notes[i]
+//         avg = sum/obj.notes.length
+        
+//        }
+//        obj.avgNote = avg
+//        abc.name = obj.name
+//        abc.avgNote = avg
+//        a1.push(abc)
+// }
+//  console.log(abc)
+
+// 5// Create a function that moves all capital letters to the front of a word.
+// 	Examples :
+
+// capToFront("hApPy") ➞ "APhpy"
+
+// capToFront("moveMENT") ➞ "MENTmove"
+
+// capToFront("shOrtCAKE") ➞ "OCAKEshrt"
+let str = "hApPy"
+let capi = ""
+let small =""
+let cap = /[A-Z]/
+for(i=0;i<str.length;i++){
+   if(cap.test(str[i])){
+       capi += str[i]
+   }
+   else{
+       small += str[i]
+   }
+}
+console.log(capi.concat(small))
+
+6.// Count each occurrence of number(can not use predefined function).
+
+// 			Input: [1,6,3,1,5,9,7,2,1,9,3,7,8,9,10] , no find=7
+// 			Output: 1 present 2 times.
+// 				   2 present 1 times.
+// 				   3 present 2 times.
+// 				   5 present 1 times …….  Etc
+// let  a = [1,6,3,1,5,9,7,2,1,9,3,7,8,9,10]
+// let b =[]
+// for(i=0;i<a.length;i++){
+//     let flag=true
+//     for(j=0;j<b.length;j++){
+//         if(a[i]==b[j]){
+//             flag = false
+//             }
+//         }
+//     if(flag == true){
+//         b.push(a[i])
+//     }
+// }
+
+// for(i=0;i<b.length;i++){
+//     let count = 0
+//     for(j=0;j<a.length;j++){
+//         if(b[i]==a[j]){
+//             count++
+//         }
+        
+//     }
+//     console.log(`${b[i]} present ${count} times`)
+   
+// }
+
+//7. Write a function that accepts an array of strings. Return the longest string(can not use predefined function).
+
+// 		Input: [‘nik’, ’mikhil’, ’Cow’,’Elephant’] 							Output: Elephant
+// let arr = ['nik', 'mikhil','nbhj0isqdgth', 'Cow','Elephant']
+// let longest_string = ""  
+// for(i=0;i<arr.length;i++){  
+//     for(j=i+1;j<arr.length;j++){  
+//         if(arr[i].length>arr[j].length){
+//             longest_string = arr[i] 
+//         }
+//     }
+// }
+// console.log(longest_string)
+
+//9.// Write Program to remove duplicate elements in an array and sort it in descending order(can not use predefined function).
+
+// 			Input: 
+// 			Output: [7,6,5,32,1]
+// let arr= [5,3,5,2,1,1,7,3,5,6]
+// let uni=[]
+// for(i=0;i<arr.length;i++){
+//     let flag = false
+//     for(j=0;j<uni.length;j++){
+//          if(arr[i]==uni[j]){
+//              flag=true
+//          }
+//     }
+//     if(flag==false){
+//         uni.push(arr[i])
+//     }
+//  }
+//  console.log(uni)
+//  for(i=0;i<uni.length;i++){
+//      for(j=i+1;j<uni.length;j++){
+//          if(uni[i]>uni[j]){
+//          temp = uni[j];
+//          uni[j] = uni[i];
+//          uni[i] = temp;
+//          }
+//      }
+//  }
+//  console.log(uni)
+
+//10.// Write a Program to Remove brackets from an algebraic expression(can not use predefined function).
+
+// 			Input: a + b-(9+c)=3
+// 			Output: a + b- 9+c=3
+// let exp = "a + b-(9+c)=3"
+// let out = ""
+// for(i=0;i<exp.length;i++){
+//     if(exp[i] == "(" || exp[i] == ")"){
+//         out += ""
+//     }
+//     else{
+//         out += exp[i]
+//     }
+// }
+// console.log(out)
+
+// Create a function that converts dash/underscore delimited words into camel casing. The first word within the output should be capitalized only if the original word was capitalized.
+
+// Examples :
+
+// toCamelCase("A-B-C") ➞ "ABC"
+
+// toCamelCase("the-stealth-warrior") ➞ "theStealthWarrior"
+
+// toCamelCase("The_Stealth_Warrior") ➞ "TheStealthWarrior"
+
+// let str ="The_Stealth_Warrior"
+// let str2 = ""
+// let arr = str.split(/['-','_']/);
+// str2 += arr[0]
+// for(i=1;i<arr.length;i++){
+//     str2 += arr[i][0].toUpperCase()+arr[i].slice(1)
+    
+// }
+// console.log(str2)
+// let arr =[]
+// for(i=0;i<str.length;i++){
+    
+//     if(str[i] !== "_"){
+//         str2 += str[i]
+        
+//     }
+//     else{
+//         arr.push(str2)
+//         str2 = ""
+//     }
+// }
+// arr.push(str2)
+// let out = arr[0]
+// for(j=1;j<arr.length;j++){
+//     out += arr[j][0].toUpperCase();
+//     for(k=1;k<arr[j].length;k++){
+//         out += arr[j][k]
+//     }
+// }
+// console.log(out)
+//   let arr = []
+// for(i=0;i<str.length;i++){
+ 
+//     if(str[i] =="-" || str[i]== "_"){
+//         arr.push(i+1)
+//          str2 +=""
+//     }
+// }
+//  for(j=0;j<arr.length;j++)
+//     {
+//         if(i==arr[j]){
+//             str2 += str[i].toUpperCase()
+//         }
+//         else{
+//         str2 += str[i]
+//     }
+        
+//     }
+
+// console.log(arr)
+// console.log(str2)
+
+// Create a function that takes an array of strings and returns an array with only the strings that have numbers in them. If there are no strings containing numbers, return an empty array.	
+
+// Examples :
+
+// numInStr(["1a", "a", "2b", "b"]) ➞ ["1a", "2b"]
+
+// numInStr(["abc", "abc10"]) ➞ ["abc10"]
+
+// numInStr(["abc", "ab10c", "a10bc", "bcd"]) ➞ ["ab10c", "a10bc"]
+
+// numInStr(["this is a test", "test1"]) ➞ ["test1"]
+
+// let arr = ["this is a test", "test1"]
+// let arr2 =[]
+// let reg = /[0-9]/
+// for(ele of arr){
+//     if(reg.test(ele)){
+//         arr2.push(ele)
+//     }
+// }
+// console.log(arr2)
+
+// 3.
+// let sal = [0, 0, 0, 0, 0, 12, 0]
+// let a= 0
+// for(i=0;i<sal.length;i++){
+//     if(i<sal.length-2){
+//           if(sal[i]<=8){
+//         a += sal[i]*10
+//     }
+//     else if(sal[i]>8){
+//         a += (80)+(sal[i]-8)*15
+//     }
+//     }
+//   else if(i==sal.length-1 || i==sal.length-2){
+//         if(sal[i]<=8){
+//         a += 2*(sal[i]*10)
+//     }
+//     else if(sal[i]>8){
+//         a += 2*((80)+(sal[i]-8)*15)
+//     }
+//     }
+// }
+// console.log(a)
+
+// 4
+// let str  ="John000Doe000123"
+// let arr = str.split("0")
+// let arr2 =[]
+// for(ele of arr){
+//     if(ele!==""){
+//         arr2.push(ele)
+//     }
+// }
+
+// let obj={}
+// for(i=0;i<arr2.length;i++){
+//     obj['firstname']=arr2[0]
+//     obj['lastname']=arr2[1]
+//     obj['id'] = arr2[2]
+// }
+// console.log(obj)
+
+//        *     1  i=1 4  2i-1 1
+//       * *    3  i=2 3  4-1  3
+//      *   *   5  i=3 2  6-1  5
+//     *     *  7  i=4 1
+//    *       * 9  i=5 0   
+//     *     *  7    6  1 
+//      *   *   5   7  2
+//       * *    3   8   3
+//        *     1   9   4
+
+
+// let n=prompt("enter number of rows")
+// for(i=1;i<=(2*n)-1;i++){
+//     let s=""
+//     if(i<=n){
+//       spaces = n-i
+//       stars = 2*i-1
+//     }else{
+//         spaces = i-n
+//         stars = 10-(2*(i-n)+1)
+//     }
+//    for(j=1;j<=spaces;j++){
+//        s += " "
+//    }
+//    for(k=1;k<=stars;k++){
+//        if(k==1 || k==stars){
+//              s += "*"
+//        }
+//        else{
+//            s+=" "
+//        }
+     
+//    }
+//    console.log(s)
+// }
+
+//      *  1    
+//     * *  2   
+//    * * *  3  
+//   * * * *   4  n=4      
+//    * * *    3  i=5  2n-i 
+//     * *     2  i=6  
+//      *    1  1 9  i=7 1 4
+
+
+// let n=prompt("enter number of rows")
+// for(i=1;i<=2*n-1;i++){
+//     let s=""
+//     if(i<=n){
+//       spaces = n-i
+//       stars = i
+//     }else{
+//         spaces = i-n
+//         stars = 2*n-i
+//     }
+//    for(j=1;j<=spaces;j++){
+//        s += " "
+//    }
+//    for(k=1;k<=stars;k++){
+     
+//              s += "* "
+//        }
+//    console.log(s)
+// }
+// ********** 0 1 i-1 * 2   
+// ****  **** 2   2          
+// ***    *** 4
+// **      ** 6   
+// *        * 8      n=5   6
+// **      ** 6   i=6 6   2   
+// ***    *** 4   i=7 4    3   
+// ****  **** 2   i=8 2    4
+// ********** 0   i=9 0   5
+// let n=prompt("enter number of rows")
+// for(i=1;i<=2*n-1;i++){
+//     if(i<=n){
+//         spaces = (i-1)*2
+//         stars = n-i+1 
+//     }else{
+//         spaces =  (2*n-1)*2-(i*2)
+//         stars =  (i-n)+1
+//     }
+//     let s=" "
+//     for(j=1;j<=stars;j++){
+//         s += "*"
+//     }
+//     for(k=1;k<=spaces;k++){
+//         s += " "
+//     }
+//     for(h=1;h<=stars;h++){
+//         s += "*"
+//     }
+//     console.log(s)
+// }
